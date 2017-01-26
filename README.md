@@ -38,24 +38,24 @@ Contrail by default exposes certain configurable options to the admin in managem
 Describe pros and cons of alternatives considered.
 
 ##3.2 API schema changes
- 
- **Configuration Changes:**
- 
- + When used in the control node process, network derives its internal configuration from the configuration distributed by the IFMAP server.
- 
- + The **first step** towards defining a new knob is to add it to the schema. OpenContrail auto-generates the **REST API** that stores the configuration and makes it available through the IF-MAP server. It also generates the **API client library** that is can be used to set the configuration parameters. The network related schema is present in **controller/src/schema/vnc_cfg.xsd**.
- 
- **Changes in vnc_cfg.xsd:**
- 
- + Add a new XSD element called “override-rd”. Where network elements defined.
- 
- ![alt text](images/sec_3.2_a.png "Img 1")
- 
- 
- + Execute the command **scons controller/src/api-lib**. This command builds the Python client api library that we will use later on to set the new configuration parameter. You can poke around at the generated code: **grep override-rd build/debug/api-lib/vnc_api/gen/**
- 
- ![alt text](images/sec_3.2_b.png "Img 2")
- 
+
+**Configuration Changes:**
+
++ When used in the control node process, network derives its internal configuration from the configuration distributed by the IFMAP server.
+
++ The **first step** towards defining a new knob is to add it to the schema. OpenContrail auto-generates the **REST API** that stores the configuration and makes it available through the IF-MAP server. It also generates the **API client library** that is can be used to set the configuration parameters. The network related schema is present in **controller/src/schema/vnc_cfg.xsd**.
+
+**Changes in vnc_cfg.xsd:**
+
++ Add a new XSD element called “override-rd”. Where network elements defined.
+
+![alt text](images/sec_3.2_a.png "Img 1")
+
+
++ Execute the command **scons controller/src/api-lib**. This command builds the Python client api library that we will use later on to set the new configuration parameter. You can poke around at the generated code: **grep override-rd build/debug/api-lib/vnc_api/gen/**
+
+![alt text](images/sec_3.2_b.png "Img 2")
+
 ##3.3 User workflow impact
 
 Contrail GUI allows the user define a new route distinguisher. Route Distinguisher field define in network creation wizard, where user can provide desired  Route Distinguisher value.

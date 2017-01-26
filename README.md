@@ -40,8 +40,13 @@ Describe pros and cons of alternatives considered.
  +**Changes in vnc_cfg.xsd:**
  +
  ++ Add a new XSD element called “override-rd”. Where network elements defined.
+ 
+ ![alt text](images/sec_3.2_a.png "Img 1")
+ 
  +
  ++ Execute the command **scons controller/src/api-lib**. This command builds the Python client api library that we will use later on to set the new configuration parameter. You can poke around at the generated code: **grep override-rd build/debug/api-lib/vnc_api/gen/**
+ 
+ ![alt text](images/sec_3.2_b.png "Img 2")
  
 ##3.3 User workflow impact
 
@@ -73,9 +78,9 @@ These steps are to be followed to make changes in contrail GUI to reflect the im
 By making the above mentioned changes, the Route Distinguisher Field will become configurable in the UI.
 On frontend, we get field of **Route Distinguisher IP** in the tabs **Create** and **Edit**. Route Distinguisher field is also visible in the tab “Networks”.
 
-![alt text](images/sec_4.1.1_a.png "Img 10")
+![alt text](images/sec_4.1.1_a.png "Img 3")
 
-![alt text](images/sec_4.1.1_b.png "Img 10")
+![alt text](images/sec_4.1.1_b.png "Img 4")
 
 
 An object is passed from frontend to API Server when we create network.

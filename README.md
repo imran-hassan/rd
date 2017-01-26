@@ -2,7 +2,6 @@
 #1. Introduction
 
 Currently RD is auto generated in contrail. This blue print implement user defined RD.
-An RD is simply a number; it does not provide any information. It is only used to translate an IPv4 prefix into VPNv4 prefix, making same IPv4 prefix a completely different VPNv4 prefix, allowing BGP to distribute these VPNv4 prefixes.
 
 RD consists of three fields:
 
@@ -42,7 +41,7 @@ Describe pros and cons of alternatives considered.
  +
  +**Configuration Changes:**
  +
- ++ When used in the control node process, network derives its internal configuration from the configuration distributed by the IFMAP server. This functionality is handled by the BgpConfigManager class.
+ ++ When used in the control node process, network derives its internal configuration from the configuration distributed by the IFMAP server.
  +
  ++ The **first step** towards defining a new knob is to add it to the schema. OpenContrail auto-generates the **REST API** that stores the configuration and makes it available through the IF-MAP server. It also generates the **API client library** that is can be used to set the configuration parameters. The network related schema is present in **controller/src/schema/vnc_cfg.xsd**.
  +

@@ -11,9 +11,9 @@ RD consists of three fields:
 
 At present, three values of Type field are identified- 0, 1 and 2.
 
-####Type 0: When Type value is 0, the Administrator field is 2-bytes and Assigned Number field is 4-bytes.
-####Type 1: When Type value is 1, the Administrator field is 4-bytes and Assigned Number field is 2-bytes.
-####Type 2: When Type value is 2, the Administrator field is 4-bytes and Assigned Number field is 2-bytes.
+Type 0: When Type value is 0, the Administrator field is 2-bytes and Assigned Number field is 4-bytes.
+Type 1: When Type value is 1, the Administrator field is 4-bytes and Assigned Number field is 2-bytes.
+Type 2: When Type value is 2, the Administrator field is 4-bytes and Assigned Number field is 2-bytes.
 
 In this blue print we are targeting Type 1
 We need support for user-defined RD range for customization of IP address field in Type-1 RD used by Contrail.

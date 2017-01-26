@@ -4,7 +4,7 @@
 Currently RD is auto generated in contrail. This blue print implement user defined RD.
 An RD is simply a number; it does not provide any information. It is only used to translate an IPv4 prefix into VPNv4 prefix, making same IPv4 prefix a completely different VPNv4 prefix, allowing BGP to distribute these VPNv4 prefixes.
 
-An RD consists of three fields:
+RD consists of three fields:
 
 1) A Type field (2 bytes)
 2) An Administrator field
@@ -31,7 +31,7 @@ All of these steps are to be performed for the new functionality to work success
 This feature request is related to Route Distinguisher. It concerns the Route Distinguisher field in Network. As compute host IPv4 addresses are reused across nodes, we need support for user-defined RD range which can allow for customization of IP address field in Type-1 RD used by Contrail.
 
 #3. Proposed solution
-Contrail by default exposes certain configurable options to the admin in management console which are eventually used by underlying service when making certain decisions or creating packets. In order to make origin field configurable, following set of changes are needed:
+Contrail by default exposes certain configurable options to the admin in management console which are eventually used by underlying service when making certain decisions or creating packets. In order to make RD field configurable, following set of changes are needed:
 
 + Expose a Route Distinguisher in Network admin UI
 
@@ -103,7 +103,7 @@ There are no changes in scalability of API and Control Plane.
 We do not expect any change to the forwarding performance.
 
 #6. Upgrade
-The BGP origin field is a new field and hence does not have any upgrade impact.
+The RD field is a new field and hence does not have any upgrade impact.
 
 #7. Deprecations
 There are no deprecations when this change is made.
